@@ -1,0 +1,53 @@
+@import "main.css";
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+td:first-child,
+th:first-child {
+    border-left: 1px solid #ccc;
+}
+
+td:not(:last-child), th:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+td, th {
+    padding: 8px;
+}
+
+.rates {
+    display: flex;
+}
+
+.rates span {
+    padding: 8px;
+}
+
+.container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+table {
+    margin-top: 20px;
+    width: 40%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.highlight {
+    background-color: rgba(0, 255, 255, 0.57);
+}
+
+ th {
+    background-color: rgba(234, 226, 234, 0.99);
+}
+
+/*tr {*/
+/*    background-color: #eeeeee;*/
+/*}*/

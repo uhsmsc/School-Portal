@@ -1,0 +1,33 @@
+@import "style.css";
+
+.news {
+    margin: 36px auto;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: #a2a2a299 2px 2px 5px;
+    padding: 24px 36px;
+}
+
+p {
+    display: flex;
+    text-align: justify;
+    max-width: 90%;
+    line-height: 20px;
+}
+
+.date {
+    color: #ccc;
+}
+
+img.news_image {
+    display: block;
+    margin: 20px 0;
+    width: 90%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+

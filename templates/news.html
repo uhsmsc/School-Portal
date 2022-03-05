@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Новости - {{ news.title }}
+{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/news.css">
+{% endblock %}
+
+{% block content %}
+    <div class="news">
+        <h1>{{ news.title }}</h1>
+
+        <span class="date">{{ news.date | formatdatetime }}</span>
+
+        <img class="news_image" src="/static/img/news/{{ news.img }}" alt="">
+
+        <p>{{ news.text|safe }}</p>
+    </div>
+{% endblock %}

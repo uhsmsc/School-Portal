@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/auth.css">
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for("login_page") }}" method="post">
+        <fieldset>
+            <legend>Войти в портал</legend>
+            <label for="login">Логин<label>
+            <input type="email" id="login" name="email" required value="{{ email }}">
+            <label for="pas">Пароль</label>
+            <input type="password" id="pas" name="password" required>
+        </fieldset>
+
+
+        {% if error %}<p class="error">Неверный логин или пароль!</p>{% endif %}
+
+        <div class="buttons">
+            <input type="submit" value="Войти">
+        </div>
+    </form>
+{% endblock %}

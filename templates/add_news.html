@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Добавить новость
+{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/add_news.css">
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for("add_news_page") }}" method="post" enctype="multipart/form-data">
+        <fieldset class="form_news">
+            <label for="title">Заголовок</label>
+            <input type="text" id="title" name="title">
+
+            <label for="description">Краткое описание</label>
+            <textarea id="description" name="description" rows="4" cols="13"></textarea>
+
+            <label for="text">Полный текст новости</label>
+            <textarea id="text" name="text" rows="10" cols="13"></textarea>
+
+            <label for="file">Загрузить фотографию</label>
+            <input type="file" class="file" id="file" name="file">
+
+            <input type="submit" value="Опубликовать">
+        </fieldset>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.7.1/tinymce.min.js" integrity="sha512-RnlQJaTEHoOCt5dUTV0Oi0vOBMI9PjCU7m+VHoJ4xmhuUNcwnB5Iox1es+skLril1C3gHTLbeRepHs1RpSCLoQ==" crossorigin="anonymous"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#text',
+            height: 300,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        });
+    </script>
+
+{% endblock %}

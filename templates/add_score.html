@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Журнал
+{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/add_score.css">
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for("add_score_page") }}" method="post">
+        <fieldset>
+
+            <legend>Добавить оценку</legend>
+
+            <label for="subject">Выберите предмет</label>
+            <select name="choice_of_subject" id="subject">
+                {% for subj in subjects %}
+                    <option value="{{ subj.id }}">{{ subj.name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="students">Выберите ученика</label>
+            <select name="choice_of_students" id="students">
+                {% for stud in students %}
+                    <option value="{{ stud.id }}">{{ stud.name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="score">Выберите оценку</label>
+            <select name="choice_of_score" id="score">
+                {% for i in range(5,1,-1) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+        </fieldset>
+
+        <div class="buttons">
+            <input type="submit" value="Сохранить">
+        </div>
+
+    </form>
+{% endblock %}

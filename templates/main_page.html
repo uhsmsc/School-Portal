@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/main.css">
+{% endblock %}
+
+{% block content %}
+<section class="main-img">
+    <img class="main-img_img" src="/static/img/main.jpg" alt="Дети">
+</section>
+
+<section class="slogan">
+    Приветствуем Вас на сайте 10«А» класса школы №101!
+    <br>Здесь Вы можете узнать о жизни нашего коллектива, наших успехах и достижениях!
+</section>
+
+<section class="news">
+    {% for n in news %}
+        <div class="news_item">
+            <h2>{{ n.title }}</h2>
+            <span class="news_date">{{ n.date | formatdatetime }}</span>
+            <img class="news_img" src="/static/img/news/{{ n.img }}" alt="">
+            <p>{{ n.description }}</p>
+            <a href="/news/{{ n.id }}" class="news_read-more">Читать далее</a>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

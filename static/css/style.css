@@ -1,0 +1,93 @@
+@import "reset.css";
+@import "font-awesome.min.css";
+@import "font.css";
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #eaeaea;
+    font-family: 'Fira Sans', "Avenir Next", serif;
+    display: flex;
+    flex-direction: column;
+    color: #4b4b4b;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Header*/
+/*********/
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2f3031;
+    padding: 0 60px;
+    color: #fff;
+}
+
+a {
+    display: flex;
+    padding: 0 10px;
+    color: white;
+    text-decoration: none;
+
+}
+
+.separator {
+    flex-grow: 1;
+}
+
+.login {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.brand {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/**********/
+/* Footer*/
+/*********/
+.footer {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 18px;
+    color: #afafaf;
+}
+
+
+/********/
+/*Common*/
+/********/
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 12px 0;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 12px 0;
+}
+
+p {
+    margin: 8px 0;
+}
